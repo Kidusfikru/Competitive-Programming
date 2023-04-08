@@ -1,0 +1,9 @@
+def domino_table(m,n):
+    while m<=16 and m>=1 and n<=16 and n>=1:
+        prod = m*n
+        if prod%2 ==0:
+            result = prod/2
+        else:
+            result =  prod/2
+            result = result.__floor__()
+        return result
