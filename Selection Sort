@@ -1,0 +1,15 @@
+class Solution: 
+    def select(self, arr, i):
+        # code here 
+        min = i
+        for j in range (i,len(arr)-1):
+            if arr[j+1]<arr[min]:
+                min = j+1
+        return min
+    
+    def selectionSort(self, arr,n):
+        #code here
+        for i in range(n):
+            min = self.select(arr,i)
+            arr[i],arr[min] = arr[min],arr[i]
+        return arr
