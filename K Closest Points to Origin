@@ -1,0 +1,16 @@
+class Solution:
+    def check(self, x, y):
+        x_squared = x ** 2
+        y_squared = y ** 2
+        fin = (x_squared + y_squared) ** 0.5
+        return fin
+
+    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+        distances = {}
+        for point in points:
+            x, y = point
+            distance = self.check(x,y)
+            distances[distance] = point
+        sorted_distances = sorted(distances.items())
+        k_closest = [sorted_distances[i][1] for i in range(k)]
+        return k_closest
